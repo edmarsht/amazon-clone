@@ -2,6 +2,9 @@
   background-color: #131921;
   display: flex;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .header__logo {
@@ -63,10 +66,7 @@
   margin-left: 10px;
 }
 
-.header__optionBasketIcon {
-  color: white;
-}
-
 .header__optionNumber {
-    margin-left: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
