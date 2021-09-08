@@ -3,12 +3,16 @@ import "./Header.css";
 import { Link } from "react-router-dom";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
+import { useStateValue } from "./StateProvider";
 
 function Header() {
+  const [{ basket }] = useStateValue();
+
+  console.log(basket);
+
   return (
     <nav className="header">
-
-        {/* Logo on the left */}
+      {/* Logo on the left */}
       <Link to="/">
         <img
           className="header__logo"
@@ -17,17 +21,16 @@ function Header() {
         />
       </Link>
 
-        {/* Search box */}
+      {/* Search box */}
       <div className="header__search">
         <input className="header__searchInput" />
         {/* Search icon */}
         <SearchIcon className="header__searchIcon" />
       </div>
 
-        {/* navBar on the right w<ith links  */}
+      {/* navBar on the right w<ith links  */}
       <div className="header__nav">
-
-          {/* 1st Link */}
+        {/* 1st Link */}
         <Link className="header__link" to="/login">
           <div className="header__option">
             <span className="header__optionLineOne">Hello Capucine </span>
@@ -35,7 +38,7 @@ function Header() {
           </div>
         </Link>
 
-            {/* 2nd Link */}
+        {/* 2nd Link */}
         <Link className="header__link" to="/">
           <div className="header__option">
             <span className="header__optionLineOne">Returns </span>
@@ -43,7 +46,7 @@ function Header() {
           </div>
         </Link>
 
-            {/* 3rd Link */}
+        {/* 3rd Link */}
         <Link className="header__link" to="/">
           <div className="header__option">
             <span className="header__optionLineOne">Your</span>
@@ -51,13 +54,15 @@ function Header() {
           </div>
         </Link>
 
-            {/* 4th Link */}
+        {/* 4th Link */}
         <Link to="/checkout" className="header__link">
           <div className="header__optionBasket">
-              {/* Basket icon */}
+            {/* Basket icon */}
             <ShoppingBasketIcon className="header__optionBasketIcon" />
             {/* Basket number item */}
-            <span className="header__optionLineTwo header__optionNumber">0</span>
+            <span className="header__optionLineTwo header__optionNumber">
+              {basket?.length}
+            </span>
           </div>
         </Link>
       </div>
