@@ -21,9 +21,9 @@ I created an Amazon clone with React Js.
 <br>
 
 <h1>Home page </h1>
-<img src="homeOne" alt="homeOne">
-<img src="homeTwo" alt="homeTwone">
+<img src="src/homeOne.png" alt="homeOne">
+<img src="src/homeTwo.png" alt="homeTwo">
 <h1>Sign-in page </h1>
-<img src="loginPage" alt="loginPage">
+<img src="src/signInPage.png" alt="loginPage">
 <h1>Basket page </h1>
-<img src="basketPage" alt="basketPage">
+<img src="src/basketPage.png" alt="basketPage">
