@@ -9,7 +9,6 @@ I created an Amazon clone with React Js.
 <br>
 <a href="https://clone-e655c.web.app/">Click in to see the app online 🖥️</a>
 
-
 <h3>Differents concept i used for the app  🧠</h3>
 <ul>
   <li>React JS for front end </li>
@@ -19,17 +18,12 @@ I created an Amazon clone with React Js.
   <li>Material UI</li>
 </ul>
 
-
 <br>
-<br>
-<br>
-<br>
-
 
 <h1>Home page </h1>
-<img src="homeOne.png" alt="homeOne">
-<img src="homeTwo.png" alt="homeTwone">
+<img src="homeOne" alt="homeOne">
+<img src="homeTwo" alt="homeTwone">
 <h1>Sign-in page </h1>
-<img src="loginPage.png" alt="loginPage">
+<img src="loginPage" alt="loginPage">
 <h1>Basket page </h1>
-<img src="basketPage.png" alt="basketPage">
+<img src="basketPage" alt="basketPage">
