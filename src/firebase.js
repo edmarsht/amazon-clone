@@ -1,19 +1,25 @@
-// import * as firebase from "firebase/app";
-// import 'firebase/auth'
+import firebase from "firebase/compat/app";
+// import firebase from "firebase";
+
+import "firebase/compat/auth"
+import "firebase/compat/firestore"
+
+
+
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDx1_78WUiYBPEAjGwRZ-KBS-Gnpy83Xyg",
-  authDomain: "clone-e655c.firebaseapp.com",
-  projectId: "clone-e655c",
-  storageBucket: "clone-e655c.appspot.com",
-  messagingSenderId: "246153621557",
-  appId: "1:246153621557:web:77d592578725f6efe9017c",
-  measurementId: "G-K0WZK9Y6W6"
+  apiKey: "AIzaSyCcPSKlYtpdzBoAC8soeSmIARMzVKzrf5I",
+  authDomain: "challenge-4b2b2.firebaseapp.com",
+  databaseURL: "https://challenge-4b2b2.firebaseio.com",
+  projectId: "challenge-4b2b2",
+  storageBucket: "challenge-4b2b2.appspot.com",
+  messagingSenderId: "962418448875",
+  appId: "1:962418448875:web:f6cce5eeaf819481f661ae",
 };
 
-// const firebaseApp = firebase.initializeApp(firebaseConfig);
+const firebaseApp = firebase.initializeApp(firebaseConfig);
 
-// const db = firebaseApp.firestore();
-// const auth = firebase.auth();
+const db = firebaseApp.firestore();
+const auth = firebase.auth();
 
-// export { db, auth };
+export { db, auth };
