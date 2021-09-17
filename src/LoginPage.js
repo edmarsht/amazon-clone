@@ -15,7 +15,6 @@ function Login() {
             .signInWithEmailAndPassword(email, password)
             .then(auth => {
                 history.push('/')
-                console.log(email)
             })
             .catch(error => alert(error.message))
     }
@@ -29,8 +28,7 @@ function Login() {
                 // it successfully created a new user with email and password
                 if (auth) {
                     history.push('/')
-                    console.log(email)
-                    console.log(password)
+                    console.log(auth)
 
                 }
             })
