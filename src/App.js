@@ -6,6 +6,7 @@ import Home from "./Home.js";
 import Checkout from "./Checkout.js";
 import LoginPage from "./LoginPage.js";
 import Footer from "./Footer.js";
+import Payment from "./Payment.js";
 import { auth } from "./firebase";
 import { useStateValue } from "./StateProvider";
 
@@ -48,6 +49,10 @@ function App() {
           </Route>
           <Route path="/login">
             <LoginPage />
+          </Route>
+          <Route path="/payment">
+            <Header />
+            <Payment />
           </Route>
           <Route path="/">
             <Header />

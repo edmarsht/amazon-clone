@@ -31,3 +31,13 @@
     font-size: 17px;
     font-weight: 800;
 }
+
+
+.checkoutProduct__info > button:hover {
+  background-color: #e7a600;
+  cursor: pointer;
+}
+
+.checkoutProduct__info > button:active {
+    transform: translateY(4px);
+}

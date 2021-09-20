@@ -29,3 +29,12 @@
     border-color: #a88734 #9c7e31 #846a29;
     color: #111;
 }
+
+.subtotal > button:hover {
+    background-color: #e7a600;
+    cursor: pointer;
+  }
+  
+  .subtotal > button:active {
+      transform: translateY(4px);
+  }

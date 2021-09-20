@@ -1,40 +1,49 @@
 .product {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    margin: 10px;
-    padding: 25px;
-    max-height: 500px;
-    min-width: 100px;
-    width: 100%;
-    background-color: white;
-    z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 10px;
+  padding: 25px;
+  max-height: 500px;
+  min-width: 100px;
+  width: 100%;
+  background-color: white;
+  z-index: 1;
 }
 
 .product__info {
-    height: 100px;
-    margin-bottom: 40px;
+  height: 100px;
+  margin-bottom: 40px;
 }
 
 .product__price {
-    margin-top: 5px;
+  margin-top: 5px;
 }
 
 .product__rating {
-    display: flex;
+  display: flex;
 }
 
 .product > img {
-    max-height: 200px;
-    width: 100%;
-    object-fit: contain;
-    margin-bottom: 15px;
-    margin-top: 10px;
+  max-height: 200px;
+  width: 100%;
+  object-fit: contain;
+  margin-bottom: 15px;
+  margin-top: 10px;
 }
 
 .product > button {
-    background-color: #f0c14b;
-    border: 1px solid;
-    border-color: #a88734 #9c7e31 #846a29;
+  background-color: #f0c14b;
+  border: 1px solid;
+  border-color: #a88734 #9c7e31 #846a29;
+}
+
+.product > button:hover {
+  background-color: #e7a600;
+  cursor: pointer;
+}
+
+.product > button:active {
+    transform: translateY(4px);
 }
