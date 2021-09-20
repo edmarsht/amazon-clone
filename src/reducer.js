@@ -41,7 +41,17 @@ function reducer(state, action) {
       }
 
       return { ...state, basket: newBasket };
-      break;
+
+      case "SET_USER":
+        return {
+          ...state,
+          user: action.user
+        }
+
+
+
+
+    
     default:
       return state;
   }
