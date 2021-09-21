@@ -22,10 +22,9 @@ background-color: white;
 }
 
 .payment__title {
-    flex-direction: 0.2;
+    flex: 0.2;
 }
 
-.payment__adress, .payment__items {
-    flex-direction: 0.8;
-    margin-left: 30px;
+.payment__adress, .payment__items, .payment__details {
+    flex: 0.8;
 }
