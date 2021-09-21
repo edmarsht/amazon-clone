@@ -1,25 +1,62 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Payment.css";
 import { useStateValue } from "./StateProvider";
 import CheckoutProduct from "./CheckoutProduct.js";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import CurrencyFormat from "react-currency-format";
 import { getBasketTotal } from "./reducer";
-
-
+import axios from './axios'
 
 function Payment() {
   const [{ basket, user }, dispatch] = useStateValue();
+  const history = useHistory();
 
   const stripe = useStripe();
   const elements = useElements();
 
+  const [succeeded, setSucceeded] = useState(false);
+  const [processing, setProcessing] = useState("");
   const [error, setError] = useState(null);
-  const [disable, setDisabled] = useState(true);
+  const [disabled, setDisabled] = useState(true);
+  const [clientSecret, setClientSecret] = useState(true);
 
-  const handleSubmit = (e) => {
+  useEffect(() => {
+    // generate the special stripe secret wich allows me to charge a customer
+    // When the basket change the stripe secret change because we need to tell to stripe that it's not the same amount
+
+    const getClientSecret = async () => {
+      // axios is a request (like GET, POST...)
+      const response = await axios({
+        method: "post",
+        // Stripe expects the total in a currencies subunits --> we need to X100 because it's cent
+        url: `/payments/create?total=${getBasketTotal(basket) * 100}`,
+      });
+      setClientSecret(response.data.clientSecret)
+    }
+    getClientSecret();
+  }, [basket]);
+  // When the basket change, useEffect function is activated
+
+  const handleSubmit = async (event) => {
     // Do all the stripe stuff
+    event.preventDefault();
+    setProcessing(true);
+
+     const payload = await stripe.confirmCardPayment(clientSecret, {
+       payment_method: {
+         card: elements.getElement(CardElement)
+       } // And then it's finished go below 
+     }).then(({ paymentIntent}) => {
+       //paymentIntent = payment confirmation 
+
+       // if it s good...
+       setSucceeded(true);
+       setError(null)
+       setProcessing(false)
+
+       history.replace('/orders')
+     })
   };
 
   const handleChange = (event) => {
@@ -80,8 +117,7 @@ function Payment() {
                   renderText={(value) => (
                     <>
                       <p>
-                        Subtotal ({basket.length} items):{" "}
-                        <strong>{` ${value}`}</strong>
+                        Order Total: <strong>{` ${value}`}</strong>
                       </p>
                     </>
                   )}
@@ -91,7 +127,13 @@ function Payment() {
                   thousandSeparator={true}
                   prefix={"$"}
                 />
+                <button disabled={processing || disabled || succeeded}>
+                  <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
+                </button>
               </div>
+
+              {/* Errors */}
+              {error && <div>{error}</div>}
             </form>
           </div>
         </div>
