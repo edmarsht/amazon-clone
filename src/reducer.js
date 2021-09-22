@@ -1,13 +1,6 @@
 export const initialState = {
   basket: [
-    {
-      id: "123456",
-      title:
-        "Westt Torque Z Casque Moto Modulable Double Visière pour Scooter Chopper - Casque de Moto Homme et Femme en Noir Mat - ECE Homologué Homme",
-      image: "https://www.amazon.fr/images/I/71m5qpW3XaL._AC_SL1500_.jpg",
-      price: 56.99,
-      rating: 3,
-    },
+
   ],
   user: null,
 };
@@ -24,7 +17,13 @@ function reducer(state, action) {
         ...state,
         basket: [...state.basket, action.item],
       };
-      break;
+
+      case 'EMPTY_BASKET':
+        return {
+          ...state, 
+          basket: []
+        };
+
     case "REMOVE_FROM_BASKET":
       //Logic for removing item from basket
       let newBasket = [...state.basket];

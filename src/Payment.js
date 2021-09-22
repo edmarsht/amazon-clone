@@ -6,7 +6,8 @@ import { Link, useHistory } from "react-router-dom";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import CurrencyFormat from "react-currency-format";
 import { getBasketTotal } from "./reducer";
-import axios from './axios'
+import axios from "./axios";
+import { db } from "./firebase";
 
 function Payment() {
   const [{ basket, user }, dispatch] = useStateValue();
@@ -32,31 +33,54 @@ function Payment() {
         // Stripe expects the total in a currencies subunits --> we need to X100 because it's cent
         url: `/payments/create?total=${getBasketTotal(basket) * 100}`,
       });
-      setClientSecret(response.data.clientSecret)
-    }
+      setClientSecret(response.data.clientSecret);
+    };
     getClientSecret();
   }, [basket]);
   // When the basket change, useEffect function is activated
+
+  console.log("The secret is >>>>>>", clientSecret);
+  console.log('@@@@@@@@@@@@@@@', user)
 
   const handleSubmit = async (event) => {
     // Do all the stripe stuff
     event.preventDefault();
     setProcessing(true);
 
-     const payload = await stripe.confirmCardPayment(clientSecret, {
-       payment_method: {
-         card: elements.getElement(CardElement)
-       } // And then it's finished go below 
-     }).then(({ paymentIntent}) => {
-       //paymentIntent = payment confirmation 
+    const payload = await stripe
+      .confirmCardPayment(clientSecret, {
+        payment_method: {
+          card: elements.getElement(CardElement),
+        }, // And then it's finished go below
+      })
+      .then(({ paymentIntent }) => {
+        //paymentIntent = payment confirmation
 
-       // if it s good...
-       setSucceeded(true);
-       setError(null)
-       setProcessing(false)
+        //push the order in firebase 
+        db
+        .collection('users')
+        .doc(user?.uid)
+        .collection('orders')
+        .doc(paymentIntent.id)
+        .set({
+          basket: basket,
+          amount: paymentIntent.amount, 
+          created: paymentIntent.created
+        })
 
-       history.replace('/orders')
-     })
+        // if it s good...
+        setSucceeded(true);
+        setError(null);
+        setProcessing(false);
+
+
+        // voir reducer.js mais en gros quand le payement est validé ça dispatch vers le reducer et plus précisement au case "EMPTY_BASKET" qui garde l'état actuel mais met le panier empty
+        dispatch({
+          type: "EMPTY_BASKET",
+        });
+
+        history.replace("/orders");
+      });
   };
 
   const handleChange = (event) => {

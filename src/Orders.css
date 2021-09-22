@@ -1,0 +1,5 @@
+.orders > h1 {
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+}

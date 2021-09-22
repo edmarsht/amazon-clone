@@ -14,14 +14,14 @@ function Home() {
         <Product
           id="123456"
           title="Trottinette électrique Adulte de 350W à Haute Puissance, Scooter électrique Rétractable, Vitesse Maximale 25KM/H, Autonomie Maximale 45 KM, écran LCD,Black. Edison the Petit | Lampe de table/d'extérieur/de chevet | Sans câble & rechargeable via USB Indoor & Outdoor | Blanc"
-          image="https://www.amazon.fr/images/I/61pZvCjNtHS._AC_SL1500_.jpg"
+          image="https://cdn.shopify.com/s/files/1/0279/1381/4091/products/trottinette-electrique-pure-air-go-Gen-2-gris-350-1200px_1080x.jpg?v=1627026068"
           price={319.0}
           rating={5}
         />
         <Product
           id="123456"
           title="Westt Torque Z Casque Moto Modulable Double Visière pour Scooter Chopper - Casque de Moto Homme et Femme en Noir Mat - ECE Homologué Homme"
-          image="https://www.amazon.fr/images/I/71m5qpW3XaL._AC_SL1500_.jpg"
+          image="https://moto-attitude.com/10664-thickbox_default/casque-hjc-rpha-11-venom-2-marvel-mc1.jpg"
           price={56.99}
           rating={3}
         />

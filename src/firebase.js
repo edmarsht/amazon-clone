@@ -8,13 +8,13 @@ import "firebase/compat/firestore"
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCcPSKlYtpdzBoAC8soeSmIARMzVKzrf5I",
-  authDomain: "challenge-4b2b2.firebaseapp.com",
-  databaseURL: "https://challenge-4b2b2.firebaseio.com",
-  projectId: "challenge-4b2b2",
-  storageBucket: "challenge-4b2b2.appspot.com",
-  messagingSenderId: "962418448875",
-  appId: "1:962418448875:web:f6cce5eeaf819481f661ae",
+  apiKey: "AIzaSyDx1_78WUiYBPEAjGwRZ-KBS-Gnpy83Xyg",
+  authDomain: "clone-e655c.firebaseapp.com",
+  projectId: "clone-e655c",
+  storageBucket: "clone-e655c.appspot.com",
+  messagingSenderId: "246153621557",
+  appId: "1:246153621557:web:77d592578725f6efe9017c",
+  measurementId: "G-K0WZK9Y6W6"
 };
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
