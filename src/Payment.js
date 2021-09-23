@@ -106,7 +106,7 @@ function Payment() {
             <h3>Delivery Adress</h3>
           </div>
           <div className="payment__adress">
-            <p>{user?.email}</p>
+            <p><strong>{user?.email}</strong></p>
             <p>148 Avenue Jean Jaurès</p>
             <p>Pessac, 33600</p>
           </div>
@@ -140,9 +140,9 @@ function Payment() {
                 <CurrencyFormat
                   renderText={(value) => (
                     <>
-                      <p>
+                      <h4>
                         Order Total: <strong>{` ${value}`}</strong>
-                      </p>
+                      </h4>
                     </>
                   )}
                   decimalScale={2}

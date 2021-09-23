@@ -2,6 +2,21 @@
     background-color: white;
     margin: 25px;
     padding: 25px;
+    border: 1px solid lightgrey;
+    position: relative;
+}
+
+.order__id {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+}
+
+.order__total {
+    margin-top: 40px;
+    border-top: 1px solid lightgrey;
+    padding-top: 30px;
+    text-align: right;
 }
 
 .order__title {
@@ -9,4 +24,6 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
+    border-bottom: 1px solid lightgrey;
+    padding-bottom: 30px;
 }
