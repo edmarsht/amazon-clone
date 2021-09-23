@@ -54,7 +54,8 @@ h4 {
   height: 30;
   border: 1px solid;
   font-weight: bolder;
-  margin-top: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
   border-color: #a88734 #9c7e31 #846a29;
   color: #111;
 }
