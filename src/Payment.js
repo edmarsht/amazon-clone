@@ -151,9 +151,13 @@ function Payment() {
                   thousandSeparator={true}
                   prefix={"$"}
                 />
+                {user? (
                 <button disabled={processing || disabled || succeeded}>
                   <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
                 </button>
+                ): (
+                  <div><h3></h3></div>
+                )}
               </div>
 
               {/* Errors */}
