@@ -1,19 +1,50 @@
+/*------------------------- Desktop dimension 1440 x 1024 */
 .home {
-    max-width: 1750px;
-    margin-left: auto;
-    margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .home__row {
-    display: flex;
-    z-index: 1;
-    margin-left: 5px;
-    margin-right: 5px;
+  display: flex;
+  z-index: 1;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .home__image {
-    width: 100%;
-    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
-    z-index: -1;
-    margin-bottom: -250px;
-} 
+  width: 100%;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  z-index: -1;
+  margin-bottom: -250px;
+}
+
+/*------------------------- Tablet dimension 768 x 1024 */
+@media (max-width: 768px) {
+  .home {
+    background-color: black;
+  }
+
+  .home__row {
+    top: 50px;
+    position: relative;
+  }
+
+  .home__image {
+  }
+}
+
+/*------------------------- Mobile dimension 320 x 640 */
+@media (max-width: 320px) {
+  .home {
+    background-color: blue;
+  }
+
+  .home__row {
+    display: inline;
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+
+  .home__image {
+  }
+}

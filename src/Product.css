@@ -1,3 +1,4 @@
+/*------------------------- Desktop dimension 1440 x 1024 */
 .product {
   display: flex;
   flex-direction: column;
@@ -45,5 +46,41 @@
 }
 
 .product > button:active {
-    transform: translateY(4px);
+  transform: translateY(4px);
+}
+
+/*------------------------- Tablet dimension 768 x 1024 */
+@media (max-width: 768px) {
+  .product {
+    max-height: 300px;
+  }
+
+  .product > img {
+    max-height: 150px;
+    margin-bottom: 15px;
+    margin-top: 10px;
+  }
+
+  .product__infoTitle {
+    width: 300px;
+    height: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+/*------------------------- Mobile dimension 320 x 640 */
+@media (max-width: 320px) {
+  .product > img {
+    max-height: 100px;
+    margin-bottom: 15px;
+    margin-top: 10px;
+  }
+
+  .product__infoTitle {
+    width: 300px;
+    height: 75px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
