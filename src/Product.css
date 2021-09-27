@@ -49,38 +49,66 @@
   transform: translateY(4px);
 }
 
-/*------------------------- Tablet dimension 768 x 1024 */
-@media (max-width: 768px) {
+/*--------------------------------------------- */
+@media (max-width: 1200px) {
   .product {
-    max-height: 300px;
+    max-height: 350px;
   }
 
   .product > img {
+    max-height: 130px;
+  }
+
+  .product__info {
+    height: 100px;
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .product {
+    max-width: 800px;
+    min-width: 400px;
+  }
+
+  .product > img {
+    margin-top: 10px;
     max-height: 150px;
-    margin-bottom: 15px;
+  }
+
+  .product__info {
+    margin: 20px;
+    text-align: center;
+  }
+
+  .product__price {
     margin-top: 10px;
   }
 
+  .product__rating {
+    justify-content: center;
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+
   .product__infoTitle {
-    width: 300px;
-    height: 100px;
+    width: auto;
     overflow: hidden;
     text-overflow: ellipsis;
   }
 }
 
-/*------------------------- Mobile dimension 320 x 640 */
-@media (max-width: 320px) {
-  .product > img {
-    max-height: 100px;
-    margin-bottom: 15px;
-    margin-top: 10px;
-  }
-
+/*------------------------ */
+@media (max-width: 839px) {
   .product__infoTitle {
-    width: 300px;
-    height: 75px;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    width: 600px;
+    height: 55px;
+    overflow:hidden;
+    text-overflow:ellipsis;
   }
+}
+
+/*------------------------- Mobile dimension  */
+@media (max-width: 700px) {
+
 }

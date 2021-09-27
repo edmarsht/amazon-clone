@@ -11,6 +11,7 @@ function Home() {
         alt=""
       />
       <div className="home__row">
+        
         <Product
           id="123456"
           title="Trottinette électrique Adulte de 350W à Haute Puissance, Scooter électrique Rétractable, Vitesse Maximale 25KM/H, Autonomie Maximale 45 KM, écran LCD,Black. Edison the Petit | Lampe de table/d'extérieur/de chevet | Sans câble & rechargeable via USB Indoor & Outdoor | Blanc"

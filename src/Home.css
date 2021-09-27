@@ -18,10 +18,9 @@
   margin-bottom: -250px;
 }
 
-/*------------------------- Tablet dimension 768 x 1024 */
-@media (max-width: 768px) {
+/*------------------------- Desktop */
+@media (max-width: 1200px) {
   .home {
-    background-color: black;
   }
 
   .home__row {
@@ -33,16 +32,34 @@
   }
 }
 
+/*------------------------- Tablet dimension 768 x 1024 */
+@media (max-width: 1000px) {
+    .home {
+
+    }
+
+    .home__image {
+        margin-bottom: -150px;
+    }
+
+    .home__row {
+        display: flex;
+        flex-direction: row;
+        align-content: space-between;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding-top: 0px;
+
+}
+}
+
 /*------------------------- Mobile dimension 320 x 640 */
-@media (max-width: 320px) {
+@media (max-width: 700) {
   .home {
     background-color: blue;
   }
 
   .home__row {
-    display: inline;
-    margin-right: 20px;
-    margin-left: 20px;
   }
 
   .home__image {
